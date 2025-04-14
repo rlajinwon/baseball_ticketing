@@ -78,7 +78,9 @@
 			<div class="sections" id="section1">
 				<div id="matchTitle" class="matchTitle">COMING SOON</div>
 			</div>
-			<div class="sections" id="section2">
+			
+			<c:if test="${list.size() != null}">
+				<div class="sections" id="section2">
 				<div class="matchCards border">
 					<div class="topDate">${list.get(0).matchDate}</div>
 					  <div class="bottomContainer">
@@ -106,31 +108,39 @@
 				
 				
 			</div>
+			</c:if>
+			
 		</div>
 		
-		<div id="wrapper-section2">
-			
-			<div class="sections" id="section2">
+			<div id="wrapper-section2">
 				
+				<c:if test="${list.size() != null}">
+				<div class="sections" id="section2">
+					
+					
+					<div class="matchCards">
+						<div class="topDate">${list.get(3).matchDate}</div>
+						  <div class="bottomContainer">
+						    <div class="bottomBox">${list.get(3).homeTeamDTO.teamName}</div>
+						    <div class="bottomBox">VS</div>
+						    <div class="bottomBox">${list.get(3).awayTeamDTO.teamName}</div>
+						  </div>
+					</div>
+					<div class="matchCards">
+						<div class="topDate">${list.get(4).matchDate}</div>
+						  <div class="bottomContainer">
+						    <div class="bottomBox">${list.get(4).homeTeamDTO.teamName}</div>
+						    <div class="bottomBox">VS</div>
+						    <div class="bottomBox">${list.get(4).awayTeamDTO.teamName}</div>
+						  </div>
+					</div>
+				</div>
+				</c:if>
 				
-				<div class="matchCards">
-					<div class="topDate">${list.get(3).matchDate}</div>
-					  <div class="bottomContainer">
-					    <div class="bottomBox">${list.get(3).homeTeamDTO.teamName}</div>
-					    <div class="bottomBox">VS</div>
-					    <div class="bottomBox">${list.get(3).awayTeamDTO.teamName}</div>
-					  </div>
-				</div>
-				<div class="matchCards">
-					<div class="topDate">${list.get(4).matchDate}</div>
-					  <div class="bottomContainer">
-					    <div class="bottomBox">${list.get(4).homeTeamDTO.teamName}</div>
-					    <div class="bottomBox">VS</div>
-					    <div class="bottomBox">${list.get(4).awayTeamDTO.teamName}</div>
-					  </div>
-				</div>
 			</div>
-		</div>
+			
+			
+			
 		
 	</div>
 
